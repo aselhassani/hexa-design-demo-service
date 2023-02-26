@@ -1,13 +1,11 @@
-package com.doccms.domain.model;
+package com.doccms.ws.dto;
 
 import java.util.List;
 
 import com.doccms.domain.model.constraints.Constraint;
 import com.doccms.domain.model.enums.FieldType;
-import lombok.Builder;
 
-@Builder
-public record Field (
+public record FieldV1DTO(
     String id,
     String name,
     FieldType type,

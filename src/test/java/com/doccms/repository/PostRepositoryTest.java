@@ -8,7 +8,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.Optional;
 
-import com.doccms.domain.model.Document;
+import com.doccms.adapter.repository.document.NodeDocument;
 import com.doccms.port.repository.DocumentRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,7 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class PostRepositoryTest {
 
-    private Document post;
+    private NodeDocument post;
 
     @InjectMocks
     private DocumentRepository underTest;
@@ -34,7 +34,7 @@ public class PostRepositoryTest {
 
         when(postJpaRepository.createDocument(any())).thenReturn(Optional.of((post)));
 
-        ArgumentCaptor<Document> captor = ArgumentCaptor.forClass(Document.class);
+        ArgumentCaptor<NodeDocument> captor = ArgumentCaptor.forClass(NodeDocument.class);
 
         underTest.createDocument(post);
 

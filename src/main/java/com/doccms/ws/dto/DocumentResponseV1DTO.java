@@ -1,7 +1,7 @@
 package com.doccms.ws.dto;
 
+import com.doccms.adapter.repository.document.NodeDocument;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.doccms.domain.model.Document;
 import lombok.Builder;
 
 @Builder
@@ -13,7 +13,7 @@ public record DocumentResponseV1DTO(
     String content
 ) {
 
-    public static DocumentResponseV1DTO fromDomain(Document domain) {
+    public static DocumentResponseV1DTO fromDomain(NodeDocument domain) {
         return DocumentResponseV1DTO.builder()
                                     // .postId(domain.postId())
                                     .title(domain.title())

@@ -3,10 +3,10 @@ package com.doccms.port.repository;
 import java.util.List;
 import java.util.Optional;
 
-import com.doccms.domain.model.Document;
+import com.doccms.adapter.repository.document.NodeDocument;
 
 public interface DocumentRepository {
-    Optional<Document> createDocument(Document post);
+    Optional<NodeDocument> createDocument(NodeDocument post);
 
-    List<Document> findDocuments();
+    List<NodeDocument> findDocuments();
 }

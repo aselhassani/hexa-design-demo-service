@@ -1,6 +1,6 @@
 package com.doccms.ws.dto;
 
-import com.doccms.domain.model.Document;
+import com.doccms.adapter.repository.document.NodeDocument;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 
@@ -14,12 +14,12 @@ public record DocumentRequestV1DTO(
     String content
 ) {
 
-    public Document toDomain() {
-        return Document.builder()
-                       .title(title)
-                       .description(description)
-                       //.content(content)
-                       .build();
+    public NodeDocument toDomain() {
+        return NodeDocument.builder()
+                           .title(title)
+                           .description(description)
+                           //.content(content)
+                           .build();
     }
 
 }
